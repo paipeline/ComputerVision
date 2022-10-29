@@ -10,6 +10,7 @@ class image_processing():
     def erosion(self):
         self.ero = cv2.erode(self.image,self.kernel,iterations=1)
         cv2.imshow("erosion",self.ero)
+        asdff
         cv2.waitKey(0)
         return self.ero
     def dilation(self):
