@@ -10,7 +10,6 @@ class image_processing():
     def erosion(self):
         self.ero = cv2.erode(self.image,self.kernel,iterations=1)
         cv2.imshow("erosion",self.ero)
-        asdff
         cv2.waitKey(0)
         return self.ero
     def dilation(self):
@@ -25,15 +24,19 @@ class image_processing():
         return self.open
     def closing(self):
         self.close = cv2.morphologyEx(self.image, cv2.MORPH_CLOSE, self.kernel)
-        cv2.imshow("opening",self.close)
+        cv2.imshow("closing",self.close)
         cv2.waitKey(0)
         return self.close
 
-op1 = image_processing("practicum\operations_1.jpg")
-op1.erosion()
+op1 = image_processing("practicum\operations_2.jpg")
+op1.closing()
+
+
+
+
 
 op2 = image_processing("practicum\operations_2.jpg")
-op2.dilation()
+op2.erosion().dilation()
 
 op3= image_processing("practicum\operations_3.jpg")
 op3.opening()
